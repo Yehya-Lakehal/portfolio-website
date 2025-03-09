@@ -55,6 +55,7 @@ nav:hover {
 nav .logo {
     color: var(--primary-color);
     font-size: 1.6rem;
+    font-weight: 800;
 }
 
 nav div {
@@ -85,16 +86,56 @@ nav div a:hover {
     align-items: center;
 }
 
-.home .texts h2 {
+.home .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 50%;
+}
+
+.home .texts h3 {
+    position: relative;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.home .texts h3::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    right: -8px;
+    top: 50%;
+    background-color: var(--secondary-color);
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    from {
+        background-color: var(--secondary-color);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+.welcome {
     font-size: 1.4rem;
 }
 
-.home .texts h2 span {
+.name {
     font-size: 3.2rem;
 }
 
+.job {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
 .home .image {
-    width: 40%;
+    width: 50%;
 }
 
 .home .image img {
@@ -129,7 +170,8 @@ nav div a:hover {
 }
 
 .container .title,
-.container .info {
+.container .info,
+.container strong {
     color: #000;
     text-align: center;
 }
@@ -339,9 +381,13 @@ nav div a:hover {
     width: 100%;
 }
 
-.card-info {
-    font-size: 1.5rem;
+.card .card-info {
+    font-size: 1.2rem;
+    color: var(--foreground-color);
+    font-weight: 400;
 }
+
+/* ======================== Contact Me ======================== */
 
 .contact .title {
     color: var(--foreground-color);
@@ -451,18 +497,26 @@ nav div a:hover {
         opacity: .4;
     }
 
-    .home .texts h2 {
-        font-size: 1.8rem;
+    .home .texts {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .welcome {
+        font-size: 1rem;
+        text-align: center;
+
+    }
+
+    .name {
+        font-size: 2.2rem;
         text-align: center;
     }
 
-    .home .texts h2 span {
-        font-size: 3.2rem;
+    .job {
         text-align: center;
-    }
-
-    .home .texts h3 {
-        text-align: center;
+        font-size: 1.2rem;
     }
 
     .about .texts {
@@ -479,7 +533,8 @@ nav div a:hover {
     }
 
     .timeline .container ul li {
-        width: 100%;
+        width: 90%;
+        margin-right: 10%;
         float: none;
         clear: none;
         transform: translate(0);
