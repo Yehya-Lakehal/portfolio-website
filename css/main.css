@@ -142,6 +142,40 @@ nav div a:hover {
     width: 100%;
 }
 
+.scroll-container {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-container .info {
+    font-size: 0.9rem;
+}
+
+.icon svg {
+    fill: var(--foreground-color);
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    60% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 /* ======================== ABOUT ======================== */
 
 .about {
@@ -394,7 +428,7 @@ nav div a:hover {
 }
 
 .contact .heading {
-    color: var(--foreground-color);
+    color: var(--primary-color);
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.2rem;
@@ -413,31 +447,36 @@ nav div a:hover {
     justify-content: space-evenly;
     align-items: center;
     width: 50%;
-    margin: 0 auto 2.5rem auto;
+    margin: 2.5rem auto;
 }
 
 .media-accounts a {
     font-size: 3rem;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.media-accounts a i:hover {
+.media-accounts a svg {
+    fill: var(--foreground-color);
+}
+
+.media-accounts a svg:hover {
     transform: scale(1.1);
 }
 
-.fa-envelope:hover,
-.fa-youtube:hover {
-    color: #f51717;
+.red-svg:hover {
+    fill: #e40c0c;
 }
 
-.fa-discord:hover {
-    color: #2843dd;
+.blue-svg:hover {
+    fill: #0d1ad6;
 }
 
-.fa-github:hover {
-    color: #490885;
+.purple-svg:hover {
+    fill: #7e028f;
 }
-
 
 /* ======================== MEDIA QUERIES ======================== */
 

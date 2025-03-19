@@ -5,7 +5,7 @@ const background_img = document.querySelector(".background")
 
 let welcome_text = "Hello, I'm ";
 let name_text = "Yehya Lakehal.";
-let job_text = ["A FullStack App Developper.", "A YouTuber.", "A Freelancer."];
+let job_text = ["A Software Developper.", "A YouTuber.", "A Freelancer."];
 let char_index = 0;
 let word_index = 0;
 let is_deleting = false;
